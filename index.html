@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Caffè Aura — A specialty coffee house in Montmartre, Paris. Single-origin beans, artisan roasting, handcrafted pastries, and an experience unlike any other." />
+  <meta name="author" content="Rami Issa" />
+  <title>Caffè Aura — Crafted Legacies, Roasted to Perfection</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon-coffee-menu.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ─── CUSTOM CURSOR ─── -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ─── AMBIENT BACKGROUND ─── -->
+  <div class="ambient-bg" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo" aria-label="Caffè Aura Home">
+        <span class="logo-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="14" cy="14" r="13" stroke="var(--gold)" stroke-width="1.5"/>
+            <path d="M9 19 C9 14 11 10 14 9 C17 10 19 14 19 19" stroke="var(--espresso)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M7 19 H21" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="14" cy="9" r="1.5" fill="var(--gold)"/>
+          </svg>
+        </span>
+        <span class="logo-text">Caffè <em>Aura</em></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#story" class="nav-link">Our Story</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <a href="#contact" class="btn-book">Book a Table</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════
+       HERO SECTION
+  ══════════════════════════════════════ -->
+  <section class="hero" id="home" aria-label="Hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="hero-eyebrow reveal-item">Since 1987 · Single Origin · Artisan Roasted</p>
+
+        <h1 class="hero-title reveal-item">
+          <span class="line-1">Crafted</span>
+          <span class="line-2"><em>Legacies.</em></span>
+          <span class="line-3">Roasted to</span>
+          <span class="line-4">Perfection.</span>
+        </h1>
+
+        <p class="hero-sub reveal-item">
+          Rare beans sourced from Ethiopia, Colombia & Sumatra —<br class="break-md"/>
+          roasted in-house each morning and brewed with quiet precision.
+        </p>
+
+        <div class="hero-cta reveal-item">
+          <a href="#menu" class="btn-primary">
+            <span>Explore the Menu</span>
+            <svg class="btn-arrow" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9H15M10 4l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#story" class="btn-ghost">Our Story</a>
+        </div>
+
+        <div class="hero-stats reveal-item">
+          <div class="stat">
+            <span class="stat-num">37</span>
+            <span class="stat-label">Years of craft</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat">
+            <span class="stat-num">12</span>
+            <span class="stat-label">Origin blends</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat">
+            <span class="stat-num">4.9</span>
+            <span class="stat-label">Guest rating</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal-item">
+        <div class="hero-img-frame">
+          <img
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=700&q=85&auto=format&fit=crop"
+            alt="Barista pouring latte art in premium ceramic cup"
+            loading="eager"
+          />
+          <div class="img-badge">
+            <span>Freshly<br/>Roasted</span>
+          </div>
+        </div>
+        <div class="hero-img-secondary">
+          <img
+            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80&auto=format&fit=crop"
+            alt="Espresso shot pulling"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-label="Scroll down">
+      <span class="scroll-text">Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       OUR STORY
+  ══════════════════════════════════════ -->
+  <section class="story" id="story" aria-label="Our Story">
+    <div class="section-inner">
+      <div class="story-text reveal-item">
+        <p class="section-label">The Aura Experience</p>
+        <h2 class="section-title">Where light slows<br/><em>and coffee lingers.</em></h2>
+        <p class="story-body">
+          Step inside and the city disappears. Warm afternoon light spills across reclaimed oak tables. The hiss of steam, the low murmur of conversation, the first sip of something perfectly drawn — this is what we built Caffè Aura for.
+        </p>
+        <p class="story-body">
+          Every cup begins weeks before it reaches you. We travel to the farms. We cup hundreds of lots. We roast in small batches on Tuesdays and Fridays, so nothing on your table is ever more than three days from the roaster.
+        </p>
+        <blockquote class="story-quote">
+          <span class="quote-mark" aria-hidden="true">"</span>
+          <p>Coffee is not a habit. It is a ritual — and rituals deserve beauty.</p>
+          <cite>— Marco Vitale, Head Roaster</cite>
+        </blockquote>
+      </div>
+
+      <div class="story-visual reveal-item">
+        <div class="story-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=700&q=85&auto=format&fit=crop"
+            alt="Close-up of specialty coffee being poured, latte art forming"
+            loading="lazy"
+          />
+          <div class="story-img-tag">
+            <span>Specialty<br/>Grade AA</span>
+          </div>
+        </div>
+        <div class="story-secondary-img">
+          <img
+            src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=400&q=80&auto=format&fit=crop"
+            alt="Coffee beans close up"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       MENU SECTION
+  ══════════════════════════════════════ -->
+  <section class="menu-section" id="menu" aria-label="Our Menu">
+    <div class="section-inner">
+      <div class="menu-header reveal-item">
+        <p class="section-label">Crafted Daily</p>
+        <h2 class="section-title">The Menu</h2>
+        <p class="menu-sub">Each item is a small ceremony. Order with intention.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="menu-tabs reveal-item" role="tablist" aria-label="Menu categories">
+        <button class="tab active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="tab" data-filter="hot" role="tab" aria-selected="false">Hot Coffee</button>
+        <button class="tab" data-filter="cold" role="tab" aria-selected="false">Cold Brews</button>
+        <button class="tab" data-filter="pastry" role="tab" aria-selected="false">Pastries</button>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="menu-grid" id="menuGrid" role="list">
+
+        <!-- Hot Coffee Items -->
+        <article class="menu-card" data-category="hot" role="listitem">
+          <div class="card-img-wrap">
+            <img src="assets/img/SpanishLatte.jpg" alt="Spanish Latte" loading="lazy"/>
+            <span class="card-tag">Hot Coffee</span>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-name">Spanish Latte</h3>
+              <span class="card-price">$6.50</span>
+            </div>
+            <p class="card-desc">Condensed milk meets freshly pulled espresso. Velvety, sweet, and deeply satisfying.</p>
+            <button class="btn-order" aria-label="Add Spanish Latte to order">
+              <span>Add to Order</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="hot" role="listitem">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&q=80&auto=format&fit=crop" alt="Flat White" loading="lazy"/>
+            <span class="card-tag">Hot Coffee</span>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-name">Flat White</h3>
+              <span class="card-price">$5.80</span>
+            </div>
+            <p class="card-desc">Double ristretto through micro-foamed whole milk. Precise. Clean. Uncompromised.</p>
+            <button class="btn-order" aria-label="Add Flat White to order">
+              <span>Add to Order</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="hot" role="listitem">
+          <div class="card-img-wrap">
+            <img src="assets/img/V60PourOver.jpg" alt="Pour Over" loading="lazy"/>
+            <span class="card-tag">Hot Coffee</span>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-name">V60 Pour Over</h3>
+              <span class="card-price">$7.20</span>
+            </div>
+            <p class="card-desc">Single origin Ethiopia Yirgacheffe. Floral, citrusy brightness poured with meditative care.</p>
+            <button class="btn-order" aria-label="Add V60 Pour Over to order">
+              <span>Add to Order</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Cold Brews -->
+        <article class="menu-card" data-category="cold" role="listitem">
+          <div class="card-img-wrap">
+            <img src="assets/img/SignatureColdBrew.jpg" alt="Cold Brew" loading="lazy"/>
+            <span class="card-tag">Cold Brew</span>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-name">Signature Cold Brew</h3>
+              <span class="card-price">$6.00</span>
+            </div>
+            <p class="card-desc">18-hour steeped Colombian dark roast. Smooth, low-acid, served over crystal-clear ice.</p>
+            <button class="btn-order" aria-label="Add Signature Cold Brew to order">
+              <span>Add to Order</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="cold" role="listitem">
+          <div class="card-img-wrap">
+            <img src="assets/img/KyotoIcedLatte.jpg" alt="Iced Matcha Latte" loading="lazy"/>
+            <span class="card-tag">Cold Brew</span>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-name">Kyoto Iced Latte</h3>
+              <span class="card-price">$6.80</span>
+            </div>
+            <p class="card-desc">Slow-drip Kyoto-style coffee over oat milk and vanilla cold foam. Effortlessly cool.</p>
+            <button class="btn-order" aria-label="Add Kyoto Iced Latte to order">
+              <span>Add to Order</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="cold" role="listitem">
+          <div class="card-img-wrap">
+            <img src="assets/img/SparklingBrew.jpg" alt="Sparkling Cold Brew" loading="lazy"/>
+            <span class="card-tag">Cold Brew</span>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-name">Sparkling Brew</h3>
+              <span class="card-price">$7.50</span>
+            </div>
+            <p class="card-desc">Cold brew concentrate cut with Pellegrino, a twist of orange peel, and a salted rim.</p>
+            <button class="btn-order" aria-label="Add Sparkling Brew to order">
+              <span>Add to Order</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Pastries -->
+        <article class="menu-card" data-category="pastry" role="listitem">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500&q=80&auto=format&fit=crop" alt="Almond Croissant" loading="lazy"/>
+            <span class="card-tag">Pastry</span>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-name">Twice-Baked Croissant</h3>
+              <span class="card-price">$5.50</span>
+            </div>
+            <p class="card-desc">Filled with house-made almond frangipane, dusted in flaked almonds and pearl sugar.</p>
+            <button class="btn-order" aria-label="Add Almond Croissant to order">
+              <span>Add to Order</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="pastry" role="listitem">
+          <div class="card-img-wrap">
+            <img src="assets/img/CardamomBun.jpg" alt="Cardamom Morning Bun" loading="lazy"/>
+            <span class="card-tag">Pastry</span>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-name">Cardamom Bun</h3>
+              <span class="card-price">$4.80</span>
+            </div>
+            <p class="card-desc">A Nordic-inspired swirl of laminated dough, cardamom butter, and dark cane sugar.</p>
+            <button class="btn-order" aria-label="Add Cardamom Bun to order">
+              <span>Add to Order</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="pastry" role="listitem">
+          <div class="card-img-wrap">
+            <img src="assets/img/ValrhonaTart.jpg" alt="Dark Chocolate Tart" loading="lazy"/>
+            <span class="card-tag">Pastry</span>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-name">Valrhona Tart</h3>
+              <span class="card-price">$6.20</span>
+            </div>
+            <p class="card-desc">72% dark chocolate ganache in a hand-pressed butter crust. Topped with sea salt flakes.</p>
+            <button class="btn-order" aria-label="Add Valrhona Tart to order">
+              <span>Add to Order</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </article>
+
+      </div><!-- end menu-grid -->
+
+      <div class="menu-empty" id="menuEmpty" aria-live="polite" hidden>
+        <p>No items in this category yet. Check back soon.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Toast notification -->
+  <div class="order-toast" id="orderToast" role="alert" aria-live="assertive">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span id="toastMsg">Added to your order</span>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       EXPERIENCE / GALLERY
+  ══════════════════════════════════════ -->
+  <section class="gallery-section" id="experience" aria-label="Ambience and Spaces">
+    <div class="section-inner">
+      <div class="gallery-header reveal-item">
+        <p class="section-label">Ambience & Spaces</p>
+        <h2 class="section-title">A place to think.<br/><em>A place to feel.</em></h2>
+      </div>
+
+      <div class="gallery-grid reveal-item">
+
+        <div class="gallery-item gallery-large">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=900&q=85&auto=format&fit=crop" alt="Main café floor with warm oak furniture and pendant lights" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-label">The Main Floor</span>
+            <p>Reclaimed oak, warm amber light, and the sound of the grinder at 7 AM.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=600&q=80&auto=format&fit=crop" alt="Quiet study corner with books and natural light" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-label">The Reading Corner</span>
+            <p>For those who need to disappear into something good.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1521302200778-33500795e128?w=600&q=80&auto=format&fit=crop" alt="Barista bar with espresso machines" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-label">The Barista Bar</span>
+            <p>Open bar seating. Watch your cup come to life.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1559305616-3f99cd43e353?w=600&q=80&auto=format&fit=crop" alt="Coffee roasting station" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-label">The Roast Lab</span>
+            <p>Small-batch roasting. Every Tuesday and Friday, 6 AM.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=600&q=80&auto=format&fit=crop" alt="Outdoor terrace of the café" loading="lazy"/>
+          <div class="gallery-overlay">
+            <span class="gallery-label">The Terrace</span>
+            <p>Morning sun. Filtered press. No agenda required.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       TESTIMONIALS
+  ══════════════════════════════════════ -->
+  <section class="testimonials" aria-label="Guest reviews">
+    <div class="section-inner">
+      <p class="section-label reveal-item">Voices of Our Guests</p>
+      <div class="testimonial-track" id="testimonialTrack">
+        <blockquote class="testimonial-card">
+          <p>"I have been to 40 cities and hundreds of cafés. Caffè Aura is in a category of its own."</p>
+          <cite>— Léa Moreau, Paris</cite>
+        </blockquote>
+        <blockquote class="testimonial-card">
+          <p>"The V60 pour over alone is worth the flight. I restructured my layover around it."</p>
+          <cite>— Haruto Nakashima, Tokyo</cite>
+        </blockquote>
+        <blockquote class="testimonial-card">
+          <p>"The kind of place that makes you forget your phone exists. That's the rarest thing."</p>
+          <cite>— Amara Diallo, Lagos</cite>
+        </blockquote>
+        <blockquote class="testimonial-card">
+          <p>"I wrote half my novel at the Reading Corner. They never once asked me to leave."</p>
+          <cite>— Sienna Marcello, Rome</cite>
+        </blockquote>
+      </div>
+      <div class="testimonial-dots" id="testimonialDots" aria-label="Testimonial navigation"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CONTACT / BOOKING
+  ══════════════════════════════════════ -->
+  <section class="contact-section" id="contact" aria-label="Contact and Reservations">
+    <div class="section-inner contact-grid">
+      <div class="contact-info reveal-item">
+        <p class="section-label">Find Us</p>
+        <h2 class="section-title">Come<br/><em>as you are.</em></h2>
+
+        <div class="contact-details">
+          <div class="contact-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2C7.24 2 5 4.24 5 7c0 4.25 5 11 5 11s5-6.75 5-11c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 10 5a1.5 1.5 0 0 1 0 3.5z" fill="var(--gold)"/></svg>
+            <div>
+              <strong>Address</strong>
+              <span>14 Rue du Café, Montmartre<br/>Paris 75018, France</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="var(--gold)" stroke-width="1.5"/><path d="M10 6v4l2.5 2.5" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <div>
+              <strong>Hours</strong>
+              <span>Mon–Fri: 7:00 AM – 9:00 PM<br/>Sat–Sun: 8:00 AM – 10:00 PM</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5a1 1 0 0 1 1-1h3l1.5 3.5L7 9a10 10 0 0 0 4 4l1.5-1.5L16 13v3a1 1 0 0 1-1 1C7.16 17 3 9.84 3 6V5z" stroke="var(--gold)" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <div>
+              <strong>Reservations</strong>
+              <span>+33 1 23 45 67 89</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap reveal-item">
+        <form class="booking-form" id="bookingForm" novalidate aria-label="Table reservation form">
+          <h3 class="form-title">Reserve a Table</h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="guestName">Your Name</label>
+              <input type="text" id="guestName" name="name" placeholder="Full name" autocomplete="name" required/>
+            </div>
+            <div class="form-group">
+              <label for="guestEmail">Email</label>
+              <input type="email" id="guestEmail" name="email" placeholder="you@example.com" autocomplete="email" required/>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="guestDate">Date</label>
+              <input type="date" id="guestDate" name="date" required/>
+            </div>
+            <div class="form-group">
+              <label for="guestGuests">Guests</label>
+              <select id="guestGuests" name="guests" required>
+                <option value="" disabled selected>Select…</option>
+                <option value="1">1 person</option>
+                <option value="2">2 people</option>
+                <option value="3">3 people</option>
+                <option value="4">4 people</option>
+                <option value="5+">5 or more</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="guestNote">Special Requests <span class="optional">(optional)</span></label>
+            <textarea id="guestNote" name="note" placeholder="Dietary needs, occasion, seating preference…" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary btn-full">
+            <span>Confirm Reservation</span>
+            <svg class="btn-arrow" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9H15M10 4l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo" aria-label="Caffè Aura Home">
+          <span class="logo-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="var(--gold)" stroke-width="1.5"/><path d="M9 19 C9 14 11 10 14 9 C17 10 19 14 19 19" stroke="var(--cream)" stroke-width="1.5" stroke-linecap="round" fill="none"/><path d="M7 19 H21" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round"/><circle cx="14" cy="9" r="1.5" fill="var(--gold)"/></svg>
+          </span>
+          <span class="logo-text">Caffè <em>Aura</em></span>
+        </a>
+        <p class="footer-tagline">Small batches. Big silences.<br/>Every cup, a conversation.</p>
+        <div class="social-links" aria-label="Social media links">
+          <!-- Instagram -->
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <!-- Facebook -->
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <!-- TikTok -->
+          <a href="#" class="social-icon" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+          <!-- Pinterest -->
+          <a href="#" class="social-icon" aria-label="Pinterest">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.852 0 1.265.64 1.265 1.408 0 .858-.546 2.141-.828 3.329-.236.994.499 1.806 1.476 1.806 1.77 0 3.132-1.867 3.132-4.563 0-2.386-1.715-4.054-4.163-4.054-2.836 0-4.499 2.126-4.499 4.325 0 .856.33 1.774.741 2.275a.3.3 0 0 1 .069.285l-.276 1.126c-.044.181-.146.22-.337.132-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#experience">Experience</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <ul>
+            <li><a href="#contact">Reserve a Table</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Roastery Tours</a></li>
+            <li><a href="#">Gift Cards</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <ul class="hours-list">
+            <li><span>Mon–Fri</span><span>7:00 – 21:00</span></li>
+            <li><span>Saturday</span><span>8:00 – 22:00</span></li>
+            <li><span>Sunday</span><span>8:00 – 22:00</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="footerYear"></span> Caffè Aura. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
