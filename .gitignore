@@ -1,0 +1,23 @@
+# ── IDE / Editor ──────────────────────────────────────
+.vscode/
+.idea/
+*.code-workspace
+
+# ── OS artifacts ──────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Node (if tooling is added later) ──────────────────
+node_modules/
+npm-debug.log*
+yarn-error.log
+
+# ── Build outputs ─────────────────────────────────────
+dist/
+build/
+
+# ── Environment & secrets ─────────────────────────────
+.env
+.env.local
+.env.*.local
