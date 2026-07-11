@@ -43,6 +43,7 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -352,9 +353,13 @@ body:has(button:hover) .cursor-follower {
 .hamburger {
   display: none;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 5px;
-  padding: 8px;
+  padding: 10px;
   margin-left: auto;
+  min-height: 44px;
+  min-width: 44px;
 }
 
 .hamburger span {
@@ -618,7 +623,8 @@ body:has(button:hover) .cursor-follower {
   .hero-cta { justify-content: center; }
   .hero-stats { justify-content: center; }
   .hero-visual { justify-content: center; }
-  .hero-img-frame { width: 300px; height: 380px; }
+  .hero-title { font-size: clamp(2.2rem, 8.5vw, 3.2rem); }
+  .hero-img-frame { width: 100%; max-width: 320px; height: 380px; }
   .hero-img-secondary { left: 20px; top: auto; bottom: -20px; width: 120px; height: 150px; }
   .break-md { display: none; }
   .scroll-indicator { display: none; }
@@ -1267,15 +1273,7 @@ body:has(button:hover) .cursor-follower {
 
 .form-group textarea { resize: vertical; min-height: 80px; }
 
-.form-group select { appearance: none; cursor: none; }
-
-@keyframes formShake {
-  0%, 100% { transform: translateX(0); }
-  20%       { transform: translateX(-6px); }
-  40%       { transform: translateX(6px); }
-  60%       { transform: translateX(-4px); }
-  80%       { transform: translateX(4px); }
-}
+.form-group select { appearance: none; cursor: pointer; }
 
 @media (max-width: 900px) {
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -1446,6 +1444,62 @@ body:has(button:hover) .cursor-follower {
 @media (max-width: 560px) {
   .footer-nav { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+
+/* ─── RESPONSIVE EXTRAS ─────────────────────────────── */
+
+/* Prevent iOS Safari auto-zoom on focus (triggers when font-size < 16px) */
+@media (max-width: 768px) {
+  .form-group input,
+  .form-group select,
+  .form-group textarea { font-size: 1rem; }
+}
+
+/* Remove iOS gray tap-highlight flash on interactive elements */
+@media (hover: none) {
+  a, button { -webkit-tap-highlight-color: transparent; }
+}
+
+/* ─── SMALL PHONES (≤ 480px) ────────────────────────── */
+@media (max-width: 480px) {
+  :root { --section-py: 60px; }
+
+  .section-inner { padding: 60px 20px; }
+
+  /* Hero */
+  .hero-inner         { padding: 36px 20px 72px; }
+  .hero-img-frame     { height: 300px; }
+  .hero-img-secondary { width: 100px; height: 126px; }
+
+  /* Section titles — scale down further on tiny viewports */
+  .section-title { font-size: clamp(1.8rem, 7vw, 2.2rem); }
+
+  /* Story */
+  .story-img-wrap { height: 320px; }
+  .story-quote    { padding: 22px 18px; }
+
+  /* Testimonials — restore readable inner width at 320px */
+  .testimonial-card { padding: 32px 20px; }
+
+  /* Gallery */
+  .gallery-overlay { padding: 20px; }
+
+  /* Toast — full-width strip instead of anchored corner badge */
+  .order-toast {
+    left:   12px;
+    right:  12px;
+    bottom: 16px;
+  }
+
+  /* Footer */
+  .footer-inner  { padding: 48px 20px 32px; }
+  .footer-bottom { padding: 20px; }
+}
+
+/* ─── EXTRA SMALL PHONES (≤ 400px) ─────────────────── */
+@media (max-width: 400px) {
+  .hero-stats { gap: 20px; }
+  .stat-num   { font-size: 1.6rem; }
 }
 
 /* ─── UTILITY ────────────────────────────────────────── */
