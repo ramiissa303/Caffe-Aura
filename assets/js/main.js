@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════
-   CAFFÈ AURA — main.js
+   CAFFÈ AURA — script.js
    ══════════════════════════════════════════════════════ */
 
 'use strict';
@@ -48,11 +48,17 @@
   const hamburger = document.getElementById('hamburger');
   const navMenu   = document.getElementById('navLinks');
 
+  // Scroll state
   window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
+    if (window.scrollY > 40) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
     updateActiveLink();
   }, { passive: true });
 
+  // Active link on scroll
   function updateActiveLink() {
     const scrollMid = window.scrollY + window.innerHeight * 0.4;
 
@@ -69,7 +75,7 @@
     });
   }
 
-  // Close mobile menu on link click
+  // Smooth close on link click (mobile)
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
       navMenu.classList.remove('open');
@@ -78,6 +84,7 @@
     });
   });
 
+  // Hamburger toggle
   hamburger.addEventListener('click', () => {
     const isOpen = navMenu.classList.toggle('open');
     hamburger.classList.toggle('open', isOpen);
@@ -101,8 +108,8 @@
     threshold:  0.1
   });
 
-  items.forEach(item => {
-    // Stagger siblings within the same parent
+  items.forEach((item, i) => {
+    // Stagger within the same parent
     const siblings = item.parentElement.querySelectorAll('.reveal-item');
     siblings.forEach((sib, idx) => {
       sib.style.transitionDelay = (idx * 0.1) + 's';
@@ -129,7 +136,8 @@
       if (matches) {
         card.classList.remove('hidden');
         card.classList.remove('fade-enter');
-        void card.offsetWidth; // force reflow to re-trigger animation
+        // Force reflow for re-trigger animation
+        void card.offsetWidth;
         card.classList.add('fade-enter');
         visibleCount++;
       } else {
@@ -138,18 +146,23 @@
       }
     });
 
-    if (menuEmpty) menuEmpty.hidden = visibleCount > 0;
+    if (menuEmpty) {
+      menuEmpty.hidden = visibleCount > 0;
+    }
   }
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
+      // Update active tab
       tabs.forEach(t => {
         t.classList.remove('active');
         t.setAttribute('aria-selected', 'false');
       });
       tab.classList.add('active');
       tab.setAttribute('aria-selected', 'true');
-      filterMenu(tab.getAttribute('data-filter'));
+
+      const filter = tab.getAttribute('data-filter');
+      filterMenu(filter);
     });
   });
 })();
@@ -169,12 +182,17 @@
       const card     = btn.closest('.menu-card');
       const itemName = card ? card.querySelector('.card-name').textContent : 'Item';
 
+      // Update toast message
       toastMsg.textContent = `"${itemName}" added to your order`;
+
+      // Show toast
       toast.classList.add('show');
       clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => toast.classList.remove('show'), 3200);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3200);
 
-      // Pulse feedback on button
+      // Pulse animation on button
       btn.style.transform = 'scale(0.95)';
       setTimeout(() => { btn.style.transform = ''; }, 150);
     });
@@ -183,15 +201,15 @@
 
 /* ─── TESTIMONIAL CAROUSEL ───────────────────────────── */
 (function initTestimonials() {
-  const cards    = document.querySelectorAll('.testimonial-card');
-  const dotsWrap = document.getElementById('testimonialDots');
+  const cards      = document.querySelectorAll('.testimonial-card');
+  const dotsWrap   = document.getElementById('testimonialDots');
 
   if (!cards.length || !dotsWrap) return;
 
   let current  = 0;
   let autoPlay = null;
 
-  // Build dot indicators
+  // Create dots
   cards.forEach((_, i) => {
     const dot = document.createElement('button');
     dot.className = 'dot' + (i === 0 ? ' active' : '');
@@ -210,10 +228,17 @@
     dots[current].classList.add('active');
   }
 
-  function startAuto() { autoPlay = setInterval(() => goTo(current + 1), 5000); }
-  function stopAuto()  { clearInterval(autoPlay); }
+  function startAuto() {
+    autoPlay = setInterval(() => goTo(current + 1), 5000);
+  }
 
+  function stopAuto() {
+    clearInterval(autoPlay);
+  }
+
+  // Init first card
   cards[0].classList.add('active');
+
   startAuto();
 
   // Pause on hover
@@ -223,7 +248,7 @@
     track.addEventListener('mouseleave', startAuto);
   }
 
-  // Swipe support
+  // Touch/swipe support
   let touchStartX = 0;
   document.querySelector('.testimonials')?.addEventListener('touchstart', e => {
     touchStartX = e.changedTouches[0].screenX;
@@ -257,6 +282,7 @@
   form.addEventListener('submit', e => {
     e.preventDefault();
 
+    // Basic validation
     const name   = document.getElementById('guestName').value.trim();
     const email  = document.getElementById('guestEmail').value.trim();
     const date   = document.getElementById('guestDate').value;
@@ -268,13 +294,15 @@
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      const emailInput = document.getElementById('guestEmail');
-      emailInput.focus();
-      emailInput.style.borderColor = '#c0392b';
-      setTimeout(() => { emailInput.style.borderColor = ''; }, 2000);
+      document.getElementById('guestEmail').focus();
+      document.getElementById('guestEmail').style.borderColor = '#c0392b';
+      setTimeout(() => {
+        document.getElementById('guestEmail').style.borderColor = '';
+      }, 2000);
       return;
     }
 
+    // Simulate success
     showFormSuccess(name);
   });
 
@@ -286,8 +314,8 @@
   }
 
   function showFormSuccess(name) {
-    const submitBtn     = form.querySelector('button[type="submit"]');
-    const originalHTML  = submitBtn.innerHTML;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalHTML = submitBtn.innerHTML;
 
     submitBtn.innerHTML = `
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -298,7 +326,8 @@
     submitBtn.style.background = '#2b7a3c';
     submitBtn.disabled = true;
 
-    const toast    = document.getElementById('orderToast');
+    // Show toast
+    const toast   = document.getElementById('orderToast');
     const toastMsg = document.getElementById('toastMsg');
     if (toast && toastMsg) {
       toastMsg.textContent = `Table reserved for ${name}. See you soon!`;
@@ -313,6 +342,21 @@
       form.reset();
     }, 4000);
   }
+})();
+
+/* Inject form shake keyframe */
+(function injectKeyframes() {
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes formShake {
+      0%, 100% { transform: translateX(0); }
+      20%       { transform: translateX(-6px); }
+      40%       { transform: translateX(6px); }
+      60%       { transform: translateX(-4px); }
+      80%       { transform: translateX(4px); }
+    }
+  `;
+  document.head.appendChild(style);
 })();
 
 /* ─── FOOTER YEAR ────────────────────────────────────── */
@@ -331,8 +375,10 @@
 
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    if (scrollY > window.innerHeight) return;
-    frame.style.transform = `translateY(${scrollY * 0.12}px)`;
+    const maxScroll = window.innerHeight;
+    if (scrollY > maxScroll) return;
+    const offset = scrollY * 0.12;
+    frame.style.transform = `translateY(${offset}px)`;
   }, { passive: true });
 })();
 
@@ -343,8 +389,8 @@
       const target = document.querySelector(anchor.getAttribute('href'));
       if (!target) return;
       e.preventDefault();
-      const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'));
-      const top  = target.getBoundingClientRect().top + window.scrollY - navH;
+      const navH   = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'));
+      const top    = target.getBoundingClientRect().top + window.scrollY - navH;
       window.scrollTo({ top, behavior: 'smooth' });
     });
   });
