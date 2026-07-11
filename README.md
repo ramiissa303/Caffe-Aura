@@ -147,7 +147,6 @@ Distributed under the [MIT License](LICENSE). You are free to use, modify, and d
 Front-End Developer
 
 - GitHub: [@ramiissa303](https://github.com/ramiissa303)
-- Upwork: [upwork.com/freelancers/your-profile](https://www.upwork.com)
 - Email: ramiissa303@gmail.com
 
 ---
